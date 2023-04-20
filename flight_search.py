@@ -35,7 +35,9 @@ class FlightSearch:
             "one_for_city": 1,
             "max_stopovers": 2,
             "curr": "EUR",
-            "luggage": "20kg"
+            "luggage": "20kg",
+            "adults": 4
+
         }
 
         response = requests.get(

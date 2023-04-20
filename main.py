@@ -36,7 +36,10 @@ for destination in sheet_data:
     if flight is None:
         continue
 
+
     if flight.price < destination["lowestPrice"]:
+
+
         body_text = f"Niedrig Preisalarm Euro {flight.price} fur Flug von {flight.origin_city}-{flight.origin_airport} zu {flight.destination_city}-{flight.destination_airport}, von  {flight.out_date} zu {flight.return_date}. \n gehe zu {flight.deep_link}"
         notification_manager.send_mail(
             body=body_text
