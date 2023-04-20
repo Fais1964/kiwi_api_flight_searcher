@@ -25,7 +25,6 @@ from_departure_dt = "2023-10-16"
 # six_month_from_today = datetime.now() + timedelta(days=(6 * 30))
 to_departure_dt = "2023-11-12"
 
-
 for destination in sheet_data:
     flight = flight_search.check_flights(
         ORIGIN_CITY_IATA,
@@ -36,10 +35,7 @@ for destination in sheet_data:
     if flight is None:
         continue
 
-
     if flight.price < destination["lowestPrice"]:
-
-
         body_text = f"Niedrig Preisalarm Euro {flight.price} fur Flug von {flight.origin_city}-{flight.origin_airport} zu {flight.destination_city}-{flight.destination_airport}, von  {flight.out_date} zu {flight.return_date}. \n gehe zu {flight.deep_link}"
         notification_manager.send_mail(
             body=body_text
